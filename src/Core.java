@@ -35,11 +35,11 @@ public class Core
 
     public void start()
     {
-        MyFrame myFrame = new MyFrame(this);
-        myFrame.setVisible(true);
+        MainMenuFrame mainMenuFrame = new MainMenuFrame(this);
+        mainMenuFrame.setVisible(true);
     }
     
-    public void fillConfigWords(Path path, MyJTextPane jTextPane)
+    public void fillConfigWords(Path path, MainMenuTextPane jTextPane)
     {
         String line = null;
         try (BufferedReader reader = Files.newBufferedReader(path, charset))
@@ -73,7 +73,7 @@ public class Core
         }
     }
 
-    public boolean fillFilteredWords(ArrayList<String> myArrayList, MyJTextPane jTextPane)
+    public boolean fillFilteredWords(ArrayList<String> myArrayList, MainMenuTextPane jTextPane)
     {
         try
         {
@@ -107,7 +107,7 @@ public class Core
         }
     }
 
-    public void fillUnFilteredWords(Path path, MyJTextPane jTextPane)
+    public void fillUnFilteredWords(Path path, MainMenuTextPane jTextPane)
     {
         String line = null;
         try (BufferedReader reader = Files.newBufferedReader(path, charset))
@@ -141,7 +141,7 @@ public class Core
         }
     }
 
-    public boolean checkAndAddDataToFilteredWords(ArrayList<String> unFilteredWords, MyJTextPane jTextPane)
+    public boolean checkAndAddDataToFilteredWords(ArrayList<String> unFilteredWords, MainMenuTextPane jTextPane)
     {
         try
         {
@@ -208,7 +208,7 @@ public class Core
         }
     }
 
-    public void createListOfWords(File file, MyJTextPane jTextPane)
+    public void createListOfWords(File file, MainMenuTextPane jTextPane)
     {
         try
         {
@@ -226,7 +226,7 @@ public class Core
         }
     }
 
-    public void modifyListOfWords(File file, MyJTextPane jTextPane)
+    public void modifyListOfWords(File file, MainMenuTextPane jTextPane)
     {
         try
         {
@@ -258,7 +258,7 @@ public class Core
         }
     }
     
-    public void modifyConfiguration(MyJTextPane jTextPane)
+    public void modifyConfiguration(MainMenuTextPane jTextPane)
     {
         try
         {
@@ -311,16 +311,6 @@ public class Core
     public void setButtonEnabled(JButton button)
     {
         button.setEnabled(true);
-    }
-
-    public void resetStatus()
-    {
-        configWords.clear();
-        filteredWords.clear();
-        unFilteredWords.clear();
-        copyOfFilteredWords.clear();
-        copyOfUnFilteredWords.clear();
-        pathArrayList.clear();
     }
 }
 
